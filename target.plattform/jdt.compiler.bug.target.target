@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="com.ibykus.afw.item.rt.ci.rap.development" sequenceNumber="309">
+  <locations>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
+      <unit id="javax.ejb" version="3.1.1.v201204261316"/>
+			<unit id="javax.activation" version="1.1.0.v201211130549"/>
+			<unit id="javax.transaction" version="1.1.1.v201105210645"/>
+			<unit id="javax.xml.rpc" version="1.1.0.v201209140446"/>
+			<unit id="javax.xml.soap" version="1.3.0.v201105210645"/>
+			<unit id="javax.xml.bind" version="2.2.0.v201105210648"/>
+			<unit id="javax.persistence" version="1.0.0.v200905011740"/>
+			<unit id="javax.jms" version="1.1.0.v201205091237"/>
+			<unit id="javax.xml" version="1.3.4.v201005080400"/>
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190827152740/repository/"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
+      <unit id="org.eclipse.rap.e4.equinox.target.feature.feature.group" version="3.7.0.20181212-1338"/>
+      <unit id="org.eclipse.rap.e4.feature.feature.group" version="3.7.0.20181127-1118"/>
+      <unit id="org.eclipse.rap.e4.sdk.feature.feature.group" version="3.7.0.20181127-1118"/>
+      <repository location="http://download.eclipse.org/rt/rap/3.7/e4"/>
+    </location>
+  </locations>
+  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>
+</target>

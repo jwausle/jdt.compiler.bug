@@ -10,5 +10,4 @@ public class ExtendCompileJavaxXmlTransformUsage extends CompileJavaxXmlTransfor
     Transformer transformer;
     Node node;
     InitialContext initialContext;
-
 }
