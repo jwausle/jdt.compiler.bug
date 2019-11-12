@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: jdt.compiler.bug.bundle.api
+Bundle-SymbolicName: jdt.compiler.bug.bundle.api
+Bundle-Version: 1.0.0.qualifier
+Export-Package: jdt.compiler.bug.bundle.api
+Import-Package: javax.xml.transform
+Bundle-RequiredExecutionEnvironment: JavaSE-11

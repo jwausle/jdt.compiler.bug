@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.jwausle</groupId>
+  <artifactId>jdt.compiler.bug.parent</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <tycho.version>1.4.0</tycho.version>
+  </properties>
+
+  <modules>
+    <module>./bundle.api</module>
+    <module>./bundle.impl</module>
+  </modules>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-maven-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <extensions>true</extensions>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-compiler-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <configuration>
+            <source>${build.java.version}</source>
+            <target>${build.java.version}</target>
+            <release>${build.java.version}</release>
+            <encoding>UTF-8</encoding>
+            <requireJREPackageImports>false</requireJREPackageImports>
+            <compilerArgument>-err:-forbidden</compilerArgument>
+            <useProjectSettings>false</useProjectSettings>
+          </configuration>
+        </plugin>
+
+
+        <!-- erstelle ein zusätzliches Source Bundle -->
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-source-plugin</artifactId>
+          <version>${tycho.version}</version>
+          <executions>
+            <execution>
+              <id>plugin-source</id>
+			        <phase>package</phase>
+              <goals>
+                <goal>plugin-source</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+	    <plugin>
+	      <groupId>org.eclipse.tycho</groupId>
+	      <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+	      <configuration>
+            <environments>
+              <environment>
+                <os>win32</os>
+                <ws>win32</ws>
+                <arch>x86_64</arch>
+              </environment>
+              <environment>
+                <os>linux</os>
+                <ws>gtk</ws>
+                <arch>x86</arch>
+              </environment>
+              <environment>
+                <os>linux</os>
+                <ws>gtk</ws>
+                <arch>x86_64</arch>
+              </environment>
+              <dependency-resolution>
+                <optionalDependencies>ignore</optionalDependencies>
+              </dependency-resolution>
+            </environments>
+	      </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
